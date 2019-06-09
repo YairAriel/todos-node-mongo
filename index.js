@@ -10,7 +10,7 @@ app.use(cors());
 
 let collection = null;
 (async () => {
-    const url = 'mongodb+srv://admin:admin@cluster0-fbusi.mongodb.net/test?retryWrites=true&w=majority';
+    const url = process.env.MONGO_URI || 'mongodb://localhost:27017';
     const connection = await mongodb.connect(url);
     const db = connection.db('mydb');
     collection = db.collection('todos');
@@ -102,4 +102,4 @@ app.get('/test-post', async (req, res) => {
     }
 })
 
-app.listen(3000, console.log('Server is running on localhost:3000....'));
+app.listen(process.env.PORT || 3000, console.log('Server is running...'));
