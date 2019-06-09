@@ -1,16 +1,5 @@
-// const http = require('http');
-
-// http.createServer((request, response) => {
-//     response.writeHead(200, {'Content-Type': 'text/plain'});
-//     response.end('Hello from server!!');
-// })
-// .listen(3000);
-
-// console.log('Server is running on localhost:3000');
-
 const express = require('express');
 const cors = require('cors');
-const fs = require('fs').promises;
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 const mongodb = require('mongodb');
