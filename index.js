@@ -7,6 +7,7 @@ const mongodb = require('mongodb');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
+app.use('/', express.static('client'));
 
 let collection = null;
 (async () => {
@@ -100,6 +101,6 @@ app.get('/test-post', async (req, res) => {
     } catch (e) {
         res.send(e);
     }
-})
+});
 
 app.listen(process.env.PORT || 3000, console.log('Server is running...'));
